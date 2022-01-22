@@ -29,4 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 Project url 
 
-https://prashantkaushik111.github.io/dashboard/calendar
+https://prashantkaushik111.github.io/prashantkaushik111.github.io
