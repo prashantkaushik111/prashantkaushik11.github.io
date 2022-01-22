@@ -1,0 +1,28 @@
+<div id="calendar-component">
+        <div id="header">
+            <div id="currentMonth">dd</div>
+            <button id="previous" class="button" (click)="navigateToPreviousMonth($event)">
+                    Previous
+            </button>
+            <button id="next" class="button" (click)="navigateToNextMonth($event)">
+                Next
+            </button>
+            <button id="add-plan" class="button" (click)="addPlan($event)">
+               Add Plan
+            </button>
+        </div>
+        <div id="content">
+            <div id="weekdays">
+                <div class="weekdays heading">Monday</div>
+                <div class="weekdays heading">Tuesday</div>
+                <div class="weekdays heading">Wednesday</div>
+                <div class="weekdays heading">Thursday</div>
+                <div class="weekdays heading">Friday</div>
+                <div class="weekdays heading">Saturday</div>
+                <div class="weekdays heading">Sunday</div>
+            </div>
+            <div id="dates" (click)="calendarClicked($event)"> 
+               
+            </div>
+        </div>
+</div>

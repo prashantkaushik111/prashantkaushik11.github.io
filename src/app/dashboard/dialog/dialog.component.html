@@ -1,0 +1,58 @@
+<div *ngIf="this.win === undefined">
+<mat-dialog-content>
+    <div id="heading"> 
+        <p>Choose a Date for Plan</p>
+    </div>
+    <div class="input-dates">
+        <div><label for="date">Choose a date:</label>
+            <select name="date" id="date">
+               <option *ngFor="let obj of dates" [value]="">{{obj}}</option> 
+              
+            </select></div>
+        <div><label for="month">Choose a Month:</label>
+            <select name="month" id="month">
+                <option *ngFor="let obj of month" [value]="">{{obj}}</option> 
+            </select></div>
+        <div><label for="year">Choose a year:</label>
+            <select name="year" id="year">
+                <option *ngFor="let obj of year" [value]="">{{obj}}</option> 
+            </select></div>
+    </div>
+    <div id="fetch-button"> 
+        <button mat-raised-button (click)="fetchEvents()" color="primary">Fetch Events</button>
+    </div>
+    <textarea id="events" name="events" rows="10" cols="50">
+        
+    </textarea>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+      <div class="action-buttons">
+        <button mat-button color="primary" (click)="onNoClick()">Cancel</button>
+        <button mat-raised-button color="warn" (click)="onSuccess()">Submit</button>
+      </div>
+  </mat-dialog-actions>
+</div>
+<div *ngIf="this.win === 1">
+    <mat-dialog-content>
+        <div id="player-won">
+            Congratulation You Completed this Game under {{this.data.move}} move and in {{this.data.time}} seconds!
+        </div>
+    </mat-dialog-content>
+    <div style="display: flex; justify-content: center; align-items: center;"><button mat-button color="primary" (click)="onNoClick()">Close</button></div>
+</div>
+
+<div *ngIf="this.win === 2">
+    <mat-dialog-content>
+        <h1>How the Game Works</h1>
+        <p>The game board consists of sixteen "cards" arranged in a grid. The deck is made up of eight different pairs of cards, each with different symbols on one side. The cards are arranged randomly on the grid with the symbol face down. The gameplay rules are very simple: flip over two hidden cards at a time to locate the ones that match!</p>
+        <h2>Each turn:</h2>
+        <ul>
+            <li>The player flips one card over to reveal its underlying symbol.</li>
+            <li>The player then turns over a second card, trying to find the corresponding card with the same symbol.</li>
+            <li>If the cards match, both cards stay flipped over.</li>
+            <li>If the cards do not match, both cards are flipped face down.</li>
+            <li>The game ends once all cards have been correctly matched.</li>
+        </ul>
+    </mat-dialog-content>
+    <div style="display: flex; justify-content: center; align-items: center;"><button mat-button color="primary" (click)="onNoClick()">Close</button></div>
+</div>

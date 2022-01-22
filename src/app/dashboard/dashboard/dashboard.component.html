@@ -1,0 +1,22 @@
+<div class="dashboard">
+    <app-header>
+
+    </app-header>
+    <div id="content" class="content">
+        <div id="sidenav" class="sidenav">
+                <ul >
+                    <li><mat-icon id="left-swipe" (click)="collapseSidebar()">swipe_left</mat-icon> <mat-icon id="right-swipe" style="display:none" (click)="collapseSidebar()">swipe_right</mat-icon></li>
+                    <li>
+                        <a class="nav-link" [routerLink]="['/dashboard/calendar']" routerLinkActive="active"><mat-icon class="mat-icon-edit">calendar_month</mat-icon><span class="list-content">Calendar App</span></a>
+</li>
+<li>
+    <a class="nav-link" [routerLink]="['/dashboard/memory']" routerLinkActive="active"><mat-icon class="mat-icon-edit">search</mat-icon><span class="list-content">Memory Game</span></a>
+</li>
+                </ul>
+        </div>
+        <div id="route-page" class="route-page">
+            
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

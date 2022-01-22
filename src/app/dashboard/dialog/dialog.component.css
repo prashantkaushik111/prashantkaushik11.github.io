@@ -1,0 +1,37 @@
+.input-dates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xx-large;
+  font-weight: bolder;
+  color: crimson;
+}
+#fetch-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+#events {
+  margin: 2.5rem;
+}
+
+.action-buttons {
+  margin: 2.5rem 6rem;
+}
+
+#player-won {
+  font-size: x-large;
+  font-weight: bolder;
+  color: #0066cc;
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}

@@ -1,0 +1,72 @@
+.dashboard {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  top: 3.5rem;
+  height: calc(100% - 3.5rem);
+  width: 100%;
+}
+
+.sidenav {
+  position: fixed;
+  left: 0;
+  background-color: black;
+  color: white;
+  width: 10%;
+  height: 100%;
+}
+.route-page {
+  position: inherit;
+  left: 10%;
+  width: 90%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+.sidenav ul {
+  padding-left: 2px;
+}
+.sidenav ul li {
+  overflow: auto;
+}
+.sidenav ul li:first-child mat-icon {
+  float: right;
+}
+
+.list-content {
+  display: inline;
+  font-size: large;
+  padding-left: 0.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  height: 100% !important;
+}
+
+li {
+  height: 2.5rem;
+}
+li:not(:first-child) {
+  border-bottom: 2px solid white;
+}
+.nav-link:hover {
+  color: #e0e0e0;
+}
+a.active {
+  background-color: #606060;
+}
+a {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
