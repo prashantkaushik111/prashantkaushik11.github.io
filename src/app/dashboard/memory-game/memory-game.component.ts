@@ -14,7 +14,6 @@ export class MemoryGameComponent implements OnInit {
   divBlock: any;
   divIconBlock: any;
   divIcon: any;
-  start = true;
   matchedCount = 0;
   moveCount = 0;
   first = -1;
@@ -29,11 +28,8 @@ export class MemoryGameComponent implements OnInit {
    }
   
   ngOnInit(): void {
-    console.log(this.icons);
     this.shuffleArray();
     this.initializeGame();
-    console.log(this.icons);
-    
   }
 
   shuffleArray() {
@@ -47,8 +43,8 @@ export class MemoryGameComponent implements OnInit {
     }
   }
   handleClick = (event: any) => {
-    const index = parseInt(event.target.id);
-    if((this.start === true)&&(this.currentCheck === 0)){
+    const index = parseInt(event.currentTarget.id);
+    if((this.currentCheck === 0)){
       if(this.first === -1) {
         this.first = index;
         this.divIconBlock[index].style.visibility = 'visible';
@@ -57,6 +53,7 @@ export class MemoryGameComponent implements OnInit {
         }
       }
       else if(this.first !== index){
+        this.currentCheck = 1;
         this.divIconBlock[index].style.visibility = 'visible';
         this.moveCount += 1;
         (document.getElementById('moves') as HTMLElement).innerHTML = 'Moves :'+this.moveCount; 
@@ -71,7 +68,6 @@ export class MemoryGameComponent implements OnInit {
           this.divBlock[index].classList.toggle('failure');
         }
         setTimeout(()=> {
-          this.currentCheck = 1;
           if(this.icons[index] === this.icons[this.first]) {
             this.matchedCount += 2;
             this.divBlock[index].removeEventListener('click', this.handleClick);
@@ -107,6 +103,7 @@ export class MemoryGameComponent implements OnInit {
         icons.classList.add("fa",icon,"fa-2x");
         icons.setAttribute('aria-hidden', 'true');
         block.setAttribute('id', ''+index);
+        iconBlock.setAttribute('id', ''+index);
         iconBlock.appendChild(icons);
         block.appendChild(iconBlock);
         fragment.appendChild(block);
@@ -120,7 +117,6 @@ export class MemoryGameComponent implements OnInit {
 
 
   refreshTable() {
-    this.start = true;
   this.matchedCount = 0;
   this.moveCount = 0;
   this.first = -1;

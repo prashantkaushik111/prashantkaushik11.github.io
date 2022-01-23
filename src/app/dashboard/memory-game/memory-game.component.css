@@ -16,6 +16,8 @@
   display: flex;
   justify-content: space-around;
   height: 2rem;
+  font-size: x-large;
+  font-weight: bolder;
 }
 
 :host ::ng-deep #game-blocks {
@@ -82,9 +84,7 @@
 }
 
 #moves {
-  font-size: x-large;
   color: #000000;
-  font-weight: bolder;
 }
 
 #refresh {
@@ -93,8 +93,6 @@
 
 #time {
   color: white;
-  font-size: x-large;
-  font-weight: bolder;
 }
 
 #game-instructions {
@@ -106,4 +104,10 @@
 #game-instructions:hover {
   color: #ff00ff;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  #header {
+    font-size: medium;
+  }
 }

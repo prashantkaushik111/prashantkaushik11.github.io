@@ -54,7 +54,7 @@ ul {
 }
 
 li {
-  height: 2.5rem;
+  height: 3.5rem;
 }
 li:not(:first-child) {
   border-bottom: 2px solid white;
@@ -69,4 +69,20 @@ a {
   display: flex;
   justify-content: stretch;
   align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .list-content {
+    display: inline;
+    font-size: xx-small;
+    padding-left: 0.5rem;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .list-content {
+    display: inline;
+    font-size: xx-small;
+    padding-left: 0.5rem;
+  }
 }
